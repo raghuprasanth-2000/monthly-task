@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">StudentData</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_the_course">Select The Course</string>
+    <string name="full_your_bio_data">Full your Bio Data</string>
+    <string name="hint_pick_up_date">dd/mm/yyyy</string>
+    <string name="select_the_college">Select The College</string>
+</resources>
