@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#E88888"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register"
-    >
+    android:background="#E88888"
+    tools:context=".Register">
 
     <TextView
         android:id="@+id/title"
@@ -17,68 +16,65 @@
         android:textColor="@color/black"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
         android:id="@+id/textname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/ic_text_style"
+        android:ems="15"
+        android:focusable="true"
         android:hint="Enter name"
-        android:focusable="true"
-        android:background="@drawable/ic_text_style"
         android:padding="10dp"
-       app:layout_constraintTop_toBottomOf="@+id/title"
-      android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
 
         />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
         android:id="@+id/Email"
-        android:hint="Email"
-        android:focusable="true"
-        android:background="@drawable/ic_text_style"
-        android:padding="15dp"
-    app:layout_constraintTop_toBottomOf="@+id/textname"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="48dp"
-        />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:ems="15"
-       android:hint="password"
+        android:layout_marginTop="48dp"
         android:background="@drawable/ic_text_style"
-        android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/Email"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Email"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textname" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        />
+        android:background="@drawable/ic_text_style"
+        android:ems="15"
+        android:hint="password"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
 
     <Button
         android:id="@+id/click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="Register"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        android:layout_marginTop="30dp"
 
-         />
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

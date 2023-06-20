@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/ic_text_style"
-        android:padding="10dp"
         android:ems="15"
         android:focusable="true"
         android:hint="name"
+        android:padding="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,13 +39,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/ic_text_style"
-        android:padding="10dp"
         android:autofillHints="@string/hint_pick_up_date"
+        android:background="@drawable/ic_text_style"
         android:ems="15"
         android:focusable="false"
         android:hint="@string/hint_pick_up_date"
         android:inputType="date"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/username" />
@@ -54,12 +54,13 @@
         android:id="@+id/gendertext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="250dp"
+        android:layout_marginRight="210dp"
         android:text="Gender"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/radiogroup"
         app:layout_constraintEnd_toEndOf="@+id/dateofbirth"
+        app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
@@ -96,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="200dp"
+        android:layout_marginRight="140dp"
         android:text="@string/select_the_course"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -113,12 +114,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnertext" />
+
     <TextView
         android:id="@+id/recycletext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="200dp"
+        android:layout_marginRight="140dp"
         android:text="@string/select_the_college"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -134,21 +136,18 @@
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewlist"/>
+        app:layout_constraintTop_toBottomOf="@+id/viewlist" />
 
     <Button
         android:id="@+id/submitbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="Submit"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycle"
-        android:layout_marginTop="30dp"
 
         />
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,12 +31,9 @@ public class HomeFragment extends Fragment {
     public HomeFragment(NavigationProfileSubmit navigationProfileSubmit) {
         this.navigationProfileSubmit = navigationProfileSubmit;
     }
-
-
     View view;
-    EditText edittext, editText2;
+    EditText username, dateofbirth;
     String gender;
-
     public HomeFragment() {
 
     }
@@ -54,8 +51,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new Adapter(getActivity(), items));
 
-        String[] values =
-                {"Bsc", "Bcom", "BBA", "Msc", "MBA", "Mcom"};
+        String[] values = {"Bsc", "Bcom", "BBA", "Msc", "MBA", "Mcom"};
         Spinner spinner = (Spinner) view.findViewById(R.id.viewlist);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, values);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
@@ -71,19 +67,16 @@ public class HomeFragment extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (radioButton.isChecked()) {
                     gender = "male";
-
-
                 } else if (radioButton1.isChecked()) {
                     gender = "female";
-
                 }
             }
 
         });
 
-        edittext = (EditText) view.findViewById(R.id.username);
-        editText2 = (EditText) view.findViewById(R.id.dateofbirth);
-        editText2.setOnClickListener(new View.OnClickListener() {
+        username = (EditText) view.findViewById(R.id.username);
+        dateofbirth = (EditText) view.findViewById(R.id.dateofbirth);
+        dateofbirth.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
@@ -94,12 +87,10 @@ public class HomeFragment extends Fragment {
                 int day = c.get(Calendar.DAY_OF_MONTH);
                 DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker view, int year,
-                                          int monthOfYear, int dayOfMonth) {
-                        editText2.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        dateofbirth.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
                     }
-                },
-                        year, month, day);
+                }, year, month, day);
                 datePickerDialog.show();
             }
         });
@@ -109,27 +100,22 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putString("username", edittext.getText().toString());
-                bundle.putString("dob", editText2.getText().toString());
+                bundle.putString("username", username.getText().toString());
+                bundle.putString("dob", dateofbirth.getText().toString());
                 bundle.putString("gender", gender);
                 bundle.putString("group", spinner.getSelectedItem().toString());
 //                bundle.putString("college", String.valueOf(recyclerView.getScrollState()));
                 NavigationFragment fragment = new NavigationFragment();
                 fragment.setArguments(bundle);
                 getFragmentManager().beginTransaction().replace(R.id.flFragment, fragment).commit();
-                navigationProfileSubmit.onDataReceived(edittext.getText().toString(), editText2.getText().toString(), gender, spinner.getSelectedItem().toString(), String.valueOf(recyclerView.getScrollState()));
+                navigationProfileSubmit.onDataReceived(username.getText().toString(), dateofbirth.getText().toString(), gender, spinner.getSelectedItem().toString(), String.valueOf(recyclerView.getScrollState()));
                 if (navigationProfileSubmit != null) {
                     navigationProfileSubmit.callBackMethod();
-
                 }
-
             }
-
-
         });
 
         return view;
     }
-
 }
 

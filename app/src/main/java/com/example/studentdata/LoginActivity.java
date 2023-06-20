@@ -13,8 +13,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView txt;
-    EditText mail1, pass1;
+    TextView title;
+    EditText mail, password;
     Button btn;
 
     @SuppressLint("MissingInflatedId")
@@ -22,21 +22,21 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        txt = findViewById(R.id.title2);
-        mail1 = findViewById(R.id.email2);
-        pass1 = findViewById(R.id.pass2);
+        title = findViewById(R.id.title2);
+        mail = findViewById(R.id.email2);
+        password= findViewById(R.id.pass2);
         btn = findViewById(R.id.click2);
 
         Intent intent = getIntent();
 
         String email = intent.getStringExtra("email");
         String pass = intent.getStringExtra("pass");
-        String Email = mail1.getText().toString();
-        String password = pass1.getText().toString();
-        mail1.setText(email);
-        pass1.setText(pass);
+        String Email = mail.getText().toString();
+        String Password = password.getText().toString();
+        mail.setText(email);
+        password.setText(pass);
 
-        Log.e("ADebugTag ", email + "," + pass + "," + Email + "," + password + ",");
+        Log.e("ADebugTag ", email + "," + pass + "," + Email + "," + Password + ",");
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,5 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 }

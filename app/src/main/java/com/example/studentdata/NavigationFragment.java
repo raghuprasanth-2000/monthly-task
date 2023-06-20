@@ -15,39 +15,31 @@ import android.widget.TextView;
 import java.text.BreakIterator;
 
 public class NavigationFragment extends Fragment {
-
     View view;
-
-
     public NavigationFragment() {
 
     }
-
-    TextView textView, textView2, textView3, textView4, textView5;
+    TextView textname, textdate, textgender, textgroup, textcollege;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_navigation, container, false);
-        textView = (TextView) view.findViewById(R.id.nametext);
-        textView2 = (TextView) view.findViewById(R.id.datetext);
-        textView3 = (TextView) view.findViewById(R.id.gendertext);
-        textView4 = (TextView) view.findViewById(R.id.grouptext);
-//        textView5 = (TextView) view.findViewById(R.id.collegetext);
-        String getArgument = getArguments().getString("username");
-        String getArgument2 = getArguments().getString("dateofbirth");
-        String getArgument3 = getArguments().getString("value");
-        String getArgument4 = getArguments().getString("course");
-//        String getArgument5 = getArguments().getString("location");
-        textView.setText(getArgument);
-        textView2.setText(getArgument2);
-        textView3.setText(getArgument3);
-        textView4.setText(getArgument4);
-//        textView5.setText(getArgument5);
-
-
+        textname = (TextView) view.findViewById(R.id.nametext);
+        textdate = (TextView) view.findViewById(R.id.datetext);
+        textgender = (TextView) view.findViewById(R.id.gendertext);
+        textgroup = (TextView) view.findViewById(R.id.grouptext);
+//      textcollege = (TextView) view.findViewById(R.id.collegetext);
+        String getArgumentname = getArguments().getString("username");
+        String getArgumentdate = getArguments().getString("dateofbirth");
+        String getArgumentgender = getArguments().getString("value");
+        String getArgumentgroup = getArguments().getString("course");
+//       String getArgumentcollege = getArguments().getString("location");
+        textname.setText(getArgumentname);
+        textdate.setText(getArgumentdate);
+        textgender.setText(getArgumentgender);
+        textgroup.setText(getArgumentgroup);
+//      textcollege.setText(getArgumentcollege);
         return view;
-
-
     }
 
 }

@@ -37,9 +37,6 @@ public class Register extends AppCompatActivity {
                 loginActivityIntent.putExtra("pass", password);
                 startActivity(loginActivityIntent);
             }
-
-
         });
-
     }
 }

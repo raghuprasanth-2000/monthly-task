@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#E4AC58"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E4AC58"
     tools:context=".LoginActivity">
 
     <TextView
@@ -27,11 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
+        android:background="@drawable/ic_text_style"
         android:ems="15"
         android:focusable="true"
-        android:background="@drawable/ic_text_style"
-        android:padding="10dp"
         android:hint="Email"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title2" />
@@ -42,9 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/ic_text_style"
-        android:padding="10dp"
         android:ems="15"
-       android:hint="password"
+        android:hint="password"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email2" />
