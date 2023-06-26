@@ -16,6 +16,8 @@ public class Register extends AppCompatActivity {
     EditText name, email, pass;
     Button button;
 
+    boolean isAllFieldsChecked = false;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +34,35 @@ public class Register extends AppCompatActivity {
                 String uname = name.getText().toString();
                 String mail = email.getText().toString();
                 String password = pass.getText().toString();
-                Intent loginActivityIntent = new Intent(Register.this, LoginActivity.class);
-                loginActivityIntent.putExtra("email", mail);
-                loginActivityIntent.putExtra("pass", password);
-                startActivity(loginActivityIntent);
+                isAllFieldsChecked = CheckAllFields();
+                if (isAllFieldsChecked) {
+                    Intent loginActivityIntent = new Intent(Register.this, LoginActivity.class);
+                    loginActivityIntent.putExtra("email", mail);
+                    loginActivityIntent.putExtra("pass", password);
+                    startActivity(loginActivityIntent);
+                }
             }
         });
+    }
+
+    private boolean CheckAllFields() {
+        if (name.length() == 0) {
+            name.setError("Username  is required");
+            return false;
+        }
+        if (email.length() == 0) {
+            email.setError("Email is required");
+            return false;
+        }
+
+        if (pass.length() == 0) {
+            pass.setError("Password is required");
+            return false;
+        } else if (pass.length() < 8) {
+            pass.setError("Password must be minimum 8 characters");
+            return false;
+        }
+
+        return true;
     }
 }
